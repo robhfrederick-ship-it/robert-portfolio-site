@@ -7,7 +7,7 @@ const ASSETS = {
   resume:                   "/assets/RobertFrederick_Resume.pdf",
   workSample_NSF:           "/assets/RobertFrederick_StrategicInitiativesWorkSample.pdf",
   article_FinanceTransform: "/assets/RobertFrederick_FinanceTransformation_POV.pdf",
-  tool_CycleTimeAnalyzer:   "https://cycle-time-analyzer-75v48q9lr-robert-fs-projects-2268098e.vercel.app/",
+  tool_CycleTimeAnalyzer:   "https://cycle-time-analyzer.vercel.app/",
   linkedin:                 "https://www.linkedin.com/in/roberthfrederick/",
   email:                    "rob.h.frederick@gmail.com",
   calendly:                 "https://calendly.com/rob-h-frederick/30min",
