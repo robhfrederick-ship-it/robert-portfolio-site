@@ -4,14 +4,15 @@ import { useState, useEffect, useRef } from "react";
 // All external URLs and hosted file paths live here. Swap in production paths
 // as you upload to Vercel. PDFs assumed to live under /assets/ in the public dir.
 const ASSETS = {
-  resume:                   "/assets/RobertFrederick_Resume.pdf",
-  workSample_NSF:           "/assets/RobertFrederick_StrategicInitiativesWorkSample.pdf",
-  article_FinanceTransform: "/assets/RobertFrederick_FinanceTransformation_POV.pdf",
-  tool_CycleTimeAnalyzer:   "https://cycle-time-analyzer.vercel.app/",
-  linkedin:                 "https://www.linkedin.com/in/roberthfrederick/",
-  email:                    "rob.h.frederick@gmail.com",
-  calendly:                 "https://calendly.com/rob-h-frederick/30min",
-  headshot:                 "/assets/RobertFrederick_Headshot.png",
+  resume:                     "/assets/RobertFrederick_Resume.pdf",
+  workSample_NSF:             "/assets/RobertFrederick_StrategicInitiativesWorkSample.pdf",
+  whitePaper_AIStrategicMgmt: "/assets/RobertFrederick_AIEnabledStrategicMgmt_WhitePaper.pdf",
+  article_FinanceTransform:   "/assets/RobertFrederick_FinanceTransformation_POV.pdf",
+  tool_CycleTimeAnalyzer:     "https://cycle-time-analyzer.vercel.app/",
+  linkedin:                   "https://www.linkedin.com/in/roberthfrederick/",
+  email:                      "rob.h.frederick@gmail.com",
+  calendly:                   "https://calendly.com/rob-h-frederick/30min",
+  headshot:                   "/assets/RobertFrederick_Headshot.png",
 };
 
 const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');`;
@@ -1462,12 +1463,61 @@ export default function Portfolio() {
       <section className="section section-light" id="work">
         <div className="max-w">
           <div className="section-label">Work Samples</div>
-          <h2 className="section-title">Selected artifacts,<br />anonymized for portfolio use.</h2>
+          <h2 className="section-title">Selected artifacts<br />and original frameworks.</h2>
           <p className="section-sub">
-            Representative work products from live engagements, structured so an evaluator can
-            see the actual thinking — governance design, portfolio sequencing, executive reporting,
-            risk management — rather than read a summary of it.
+            Representative work products from live engagements alongside original frameworks
+            developed for publication. Structured so an evaluator can see the actual thinking —
+            governance design, portfolio sequencing, executive reporting, risk management — rather
+            than read a summary of it.
           </p>
+
+          {/* ── White Paper: AI-Enabled Strategic Management ── */}
+          <div className="evidence-card" style={{ marginBottom: 16 }}>
+            <div>
+              <div className="ev-meta-row">White Paper · AI Governance &amp; Strategic Management · May 2026</div>
+              <h3 className="ev-title">
+                AI-Enabled Strategic Management &amp; Execution Model
+              </h3>
+              <p className="ev-body" style={{ fontStyle: "italic", marginBottom: 12, color: "var(--warm)" }}>
+                Connecting Strategy, Execution, and Continuous Improvement Under Human Governance
+              </p>
+              <p className="ev-body">
+                An original framework positioning AI as the connective layer across strategic
+                planning, project execution, and process improvement — while preserving human
+                governance over prioritization, approval, risk acceptance, and final decisions.
+                The paper diagnoses the structural gap between three disciplines that produce
+                different artifacts on different cadences with different ownership, then proposes
+                a circular model in which AI ingests, interprets, drafts, connects, and monitors
+                so that traceability and alignment are maintained continuously rather than
+                reconstructed during quarterly reviews. Includes the management gap analysis,
+                the model itself, the value categories organizations can expect, and five
+                principles for adoption sequenced from foundational to advanced.
+              </p>
+
+              <div className="ev-demonstrates-label">What it demonstrates</div>
+              <ul className="ev-demo-list">
+                <li>AI Governance Design</li>
+                <li>Strategic Management Architecture</li>
+                <li>Operating Model Frameworks</li>
+                <li>Cross-Discipline Integration</li>
+                <li>Original Thought Leadership</li>
+              </ul>
+            </div>
+
+            <div className="ev-action">
+              <div className="ev-action-top">
+                <div className="ev-action-label">White Paper</div>
+                <div className="ev-action-meta">
+                  6-page PDF<br />
+                  Original framework<br />
+                  Direct download
+                </div>
+              </div>
+              <a className="btn-dl" href={ASSETS.whitePaper_AIStrategicMgmt} target="_blank" rel="noopener noreferrer">
+                View White Paper →
+              </a>
+            </div>
+          </div>
 
           <div className="evidence-card">
             <div>
