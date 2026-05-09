@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 const ASSETS = {
   resume:                     "/assets/RobertFrederick_Resume.pdf",
   workSample_NSF:             "/assets/RobertFrederick_StrategicInitiativesWorkSample.pdf",
-  whitePaper_AIStrategicMgmt: "/assets/RobertFrederick_AIEnabledStrategicMgmt_WhitePaper.pdf",
+  whitePaper_AIStrategicMgmt: "/assets/RobertFrederick_AIEnabledStrategicMgmtWhitePaper.pdf",
   article_FinanceTransform:   "/assets/RobertFrederick_FinanceTransformation_POV.pdf",
   tool_CycleTimeAnalyzer:     "https://cycle-time-analyzer.vercel.app/",
   linkedin:                   "https://www.linkedin.com/in/roberthfrederick/",
