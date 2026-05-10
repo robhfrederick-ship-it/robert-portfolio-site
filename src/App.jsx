@@ -6,13 +6,15 @@ import { useState, useEffect, useRef } from "react";
 const ASSETS = {
   resume:                     "/assets/RobertFrederick_Resume.pdf",
   workSample_NSF:             "/assets/RobertFrederick_StrategicInitiativesWorkSample.pdf",
-  whitePaper_AIStrategicMgmt: "/assets/RobertFrederick_AIEnabledStrategicMgmtWhitePaper.pdf",
+  whitePaper_AIStrategicMgmt: "/assets/RobertFrederick_AIEnabledStrategicMgmt_WhitePaper.pdf",
   article_FinanceTransform:   "/assets/RobertFrederick_FinanceTransformation_POV.pdf",
   tool_CycleTimeAnalyzer:     "https://cycle-time-analyzer.vercel.app/",
   linkedin:                   "https://www.linkedin.com/in/roberthfrederick/",
   email:                      "rob.h.frederick@gmail.com",
   calendly:                   "https://calendly.com/rob-h-frederick/30min",
   headshot:                   "/assets/RobertFrederick_Headshot.png",
+  logo_uva:                   "/assets/UVALogo.jpg",
+  logo_dartmouth:             "/assets/DartmouthLogo.jpg",
 };
 
 const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');`;
@@ -280,6 +282,89 @@ body {
 .proof-text strong {
   color: var(--gold2);
   font-weight: 500;
+}
+
+/* ── Daily Operating Principle ── */
+.principle-section {
+  background: var(--cream);
+  padding: 88px 48px 96px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+.principle-section::before {
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60px; height: 3px;
+  background: var(--gold);
+}
+.principle-section::after {
+  content: '"';
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 280px;
+  font-weight: 700;
+  color: rgba(200,150,10,0.06);
+  line-height: 1;
+  top: 30px;
+  left: calc(50% - 470px);
+  pointer-events: none;
+  user-select: none;
+}
+.principle-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.principle-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.principle-eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.45;
+}
+.principle-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.45;
+  margin: 0 0 36px;
+  letter-spacing: -0.01em;
+}
+.principle-attribution {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--text);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.principle-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--warm);
+}
+.principle-meta-dot {
+  color: var(--gold);
+  margin: 0 8px;
 }
 
 /* ── Best Fit Roles ── */
@@ -1004,6 +1089,34 @@ body {
   color: rgba(255,255,255,0.4);
   margin-top: 3px;
 }
+.about-edu-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.about-edu-item:last-child { border-bottom: none; }
+.about-edu-logo {
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.about-edu-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.about-edu-text { min-width: 0; }
 .about-divider {
   width: 48px;
   height: 3px;
@@ -1103,6 +1216,8 @@ body {
   .nav-links { display: none; }
   .hero { padding: 100px 24px 80px; }
   .hero-credentials { display: none; }
+  .principle-section { padding: 56px 24px 64px; }
+  .principle-section::after { font-size: 180px; left: 12px; top: 20px; }
   .roles-grid { grid-template-columns: 1fr; }
   .employers-inner { gap: 20px; }
   .employers-label { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(0,0,0,0.12); padding-bottom: 12px; width: 100%; }
@@ -1207,6 +1322,102 @@ const PILLARS = [
   },
 ];
 
+// Daily operating principles — 64 quotes across 8 capability categories.
+//
+// Rotation: interleaves by category. Day 1 surfaces Operating Models #1,
+// Day 2 Process Architecture #1, ..., Day 8 AI Governance #1, Day 9
+// Operating Models #2, etc. Cycle repeats every 64 days.
+//
+// Tags (editorial only — not rendered):
+//   measured   = senior, advisory, often two-sentence
+//   pointed    = contrastive, crisp, memorable
+//   diagnostic = names a failure mode or recurring pattern
+//
+// anchor: true marks weight-bearing quotes that should be edited
+// especially lightly. They carry the most substantive value in their
+// category and define the worldview the site is presenting.
+const QUOTES = [
+  // ── Operating Models ──
+  { text: "Organizations do not scale through effort alone; they scale through structure. Durable execution starts when governance, accountability, and workflow design reinforce one another.", category: "Operating Models", tag: "measured", anchor: true },
+  { text: "The visible plan is rarely the hardest part. What determines whether delivery holds is the operating logic underneath it.", category: "Operating Models", tag: "measured", anchor: false },
+  { text: "When leaders ask why the same problems keep resurfacing, the answer is often structural rather than individual. Stable execution depends on making the model explicit, not leaving it to institutional memory.", category: "Operating Models", tag: "diagnostic", anchor: true },
+  { text: "Most execution problems are not effort problems. They are structural problems wearing the clothes of effort problems.", category: "Operating Models", tag: "pointed", anchor: false },
+  { text: "Strategy without an operating model is intent. Operating model without strategy is motion. The two have to be designed together.", category: "Operating Models", tag: "pointed", anchor: false },
+  { text: "An operating model is not an org chart with arrows. It defines who decides, who delivers, what is shared, and what is local.", category: "Operating Models", tag: "pointed", anchor: true },
+  { text: "An operating model earns its value when it reduces ambiguity in how work gets done. Cleaner documentation helps, but role clarity and decision logic are what make the change stick.", category: "Operating Models", tag: "measured", anchor: false },
+  { text: "A well-designed operating model makes coordination easier before it makes performance faster. That sequence matters more than most transformation plans admit.", category: "Operating Models", tag: "diagnostic", anchor: false },
+
+  // ── Process Architecture ──
+  { text: "Process improvement creates the most value when it removes ambiguity from execution, not just waste from individual steps.", category: "Process Architecture", tag: "measured", anchor: true },
+  { text: "A process map without ownership is documentation. A process map with ownership is governance.", category: "Process Architecture", tag: "pointed", anchor: false },
+  { text: "Standardization is often less about compliance than about making decisions repeatable. Once the process stops depending on local workarounds, performance becomes easier to sustain.", category: "Process Architecture", tag: "measured", anchor: true },
+  { text: "The defect that matters most is the one that recurs. Recurrence is a signal about design, not about people.", category: "Process Architecture", tag: "diagnostic", anchor: false },
+  { text: "Optimization is not just finding a faster path. It is deciding what should no longer vary and building the control logic to support that decision.", category: "Process Architecture", tag: "measured", anchor: true },
+  { text: "Standardization is not the absence of judgment. It is the discipline of locating judgment where it adds the most value.", category: "Process Architecture", tag: "pointed", anchor: false },
+  { text: "Many organizations think they have a tooling problem when they really have a process-definition problem. Better systems help, but only after the work itself has been made clearer.", category: "Process Architecture", tag: "diagnostic", anchor: true },
+  { text: "Process architecture matters most when multiple teams have to move in sequence. Handoffs, controls, and timing discipline are where good design proves itself.", category: "Process Architecture", tag: "measured", anchor: false },
+
+  // ── PMO Governance ──
+  { text: "Governance only adds value when it helps leaders make clearer decisions at the speed the work is actually moving.", category: "PMO Governance", tag: "measured", anchor: true },
+  { text: "A PMO that only reports on projects is a tracking function. A PMO that influences decisions is governance.", category: "PMO Governance", tag: "pointed", anchor: true },
+  { text: "Executive reporting is not a summary exercise; it is a control mechanism. Its quality depends on whether timing, dependencies, and open issues are surfaced early enough to matter.", category: "PMO Governance", tag: "measured", anchor: true },
+  { text: "The point of a risk register is not to list risks. It is to make sure the right risks reach the right people in time to act.", category: "PMO Governance", tag: "pointed", anchor: false },
+  { text: "A portfolio does not become governable because it is large; it becomes governable because sequencing, accountability, and tradeoffs are made explicit.", category: "PMO Governance", tag: "measured", anchor: true },
+  { text: "Initiatives proliferate beyond what the organization can resource. Prioritization is the discipline of saying so out loud.", category: "PMO Governance", tag: "diagnostic", anchor: false },
+  { text: "Governance frameworks are most valuable under deadline pressure. That is when prioritization logic and escalation discipline stop being nice-to-have and start protecting delivery.", category: "PMO Governance", tag: "measured", anchor: false },
+  { text: "Status meetings without decision authority generate motion. Status meetings with decision authority generate progress.", category: "PMO Governance", tag: "pointed", anchor: false },
+
+  // ── Transformation ──
+  { text: "The system is the visible investment. The operating model is the real transformation.", category: "Transformation", tag: "pointed", anchor: true },
+  { text: "Digital transformation holds only when the underlying function changes with it. Otherwise the organization modernizes the environment while preserving the old operating burden.", category: "Transformation", tag: "measured", anchor: true },
+  { text: "The hardest question in modernization is not which system is being implemented. It is what the organization is finally willing to make common.", category: "Transformation", tag: "pointed", anchor: true },
+  { text: "Large-scale change is usually less constrained by software than by unresolved decisions. What makes the difference is confronting role boundaries, standards, and accountability before go-live.", category: "Transformation", tag: "measured", anchor: false },
+  { text: "Transformation that does not change how decisions get made has not transformed anything.", category: "Transformation", tag: "pointed", anchor: false },
+  { text: "Organizations rarely fail transformation because they lacked activity. They fail because implementation outpaced the decisions needed to make the new environment work.", category: "Transformation", tag: "diagnostic", anchor: true },
+  { text: "If the new operating model depends on the same individuals to hold it together, nothing structural has changed.", category: "Transformation", tag: "diagnostic", anchor: false },
+  { text: "Broad transformation goals become real when governance, process, and accountability are redesigned together. That is what turns implementation into durable improvement.", category: "Transformation", tag: "measured", anchor: false },
+
+  // ── Performance Measurement ──
+  { text: "Most performance dashboards report what happened. Useful dashboards report what to decide.", category: "Performance Measurement", tag: "pointed", anchor: true },
+  { text: "Metrics matter less for their precision than for their usefulness in showing where attention is needed. The real differentiator is whether they surface signal early enough to change a decision.", category: "Performance Measurement", tag: "measured", anchor: true },
+  { text: "A KPI without a target is a number. A KPI with a target and an owner is governance.", category: "Performance Measurement", tag: "pointed", anchor: false },
+  { text: "Dashboards earn trust when they eliminate reconstruction. The strongest ones connect the evidence leaders need before a review becomes an exercise in reassembly.", category: "Performance Measurement", tag: "measured", anchor: false },
+  { text: "Every dashboard is also a statement about what the organization considers important. Most are accidentally honest.", category: "Performance Measurement", tag: "diagnostic", anchor: false },
+  { text: "Performance evidence is most valuable when it closes the gap between reported status and operating reality. That is where analysis stops being descriptive and starts becoming managerial.", category: "Performance Measurement", tag: "measured", anchor: true },
+  { text: "The hardest part of measurement is not data collection. It is deciding which decision the metric is supposed to improve.", category: "Performance Measurement", tag: "pointed", anchor: false },
+  { text: "Analysis creates value when it clarifies tradeoffs, not when it produces more numbers. The point is to make the pattern visible enough to change a decision.", category: "Performance Measurement", tag: "measured", anchor: false },
+
+  // ── Change Enablement ──
+  { text: "Adoption is not the result of training. It is the result of new ways of working being easier than the old ways.", category: "Change Enablement", tag: "pointed", anchor: true },
+  { text: "If the old workflow still exists in any form, the new one has not been adopted. It has been added.", category: "Change Enablement", tag: "diagnostic", anchor: false },
+  { text: "Resistance often signals unresolved ambiguity more than reluctance. Once people understand decisions, boundaries, and expectations, adoption usually becomes more practical.", category: "Change Enablement", tag: "diagnostic", anchor: true },
+  { text: "A new process that depends on champions to survive has not been adopted. It is on life support.", category: "Change Enablement", tag: "diagnostic", anchor: false },
+  { text: "Training prepares people. Reinforcement keeps them. Reinforcement is the part organizations forget to fund.", category: "Change Enablement", tag: "pointed", anchor: false },
+  { text: "The goal of change enablement is not temporary compliance. It is building enough clarity and consistency that the new approach becomes the default way of operating.", category: "Change Enablement", tag: "measured", anchor: true },
+  { text: "Adoption gets stronger when the change reduces friction instead of merely shifting it. People support what they can use, not just what they were told to accept.", category: "Change Enablement", tag: "measured", anchor: false },
+  { text: "Change enablement works best when it is built into execution rather than treated as a separate stream. That is how new practices move from launch activity into operating habit.", category: "Change Enablement", tag: "measured", anchor: false },
+
+  // ── Systems Development ──
+  { text: "Strong systems work begins when business logic and technical logic are treated as part of the same design problem.", category: "Systems Development", tag: "measured", anchor: true },
+  { text: "Bad code is usually a clean implementation of an unclear decision.", category: "Systems Development", tag: "pointed", anchor: true },
+  { text: "Requirements become more useful when they explain how the work should function, not just what the system should display. That is where practicality and scalability actually begin.", category: "Systems Development", tag: "measured", anchor: false },
+  { text: "Systems development fails most often at the seam between business intent and technical execution. Whoever owns that seam owns the outcome.", category: "Systems Development", tag: "diagnostic", anchor: true },
+  { text: "Technical builds hold up better when the operating model underneath them is clear. Otherwise the system inherits the same ambiguity the project was supposed to resolve.", category: "Systems Development", tag: "diagnostic", anchor: false },
+  { text: "The most expensive system defects are usually introduced before any code is written.", category: "Systems Development", tag: "diagnostic", anchor: false },
+  { text: "A useful system does more than automate tasks. It reinforces the way decisions, approvals, and information are supposed to move.", category: "Systems Development", tag: "measured", anchor: false },
+  { text: "A backlog without clear priority is not a delivery plan. It is deferred decision-making.", category: "Systems Development", tag: "pointed", anchor: false },
+
+  // ── AI Governance ──
+  { text: "The real promise of AI is not replacement; it is connection. It becomes useful when it helps organizations link strategy, execution, risk, and improvement in ways they could not sustain manually.", category: "AI Governance", tag: "measured", anchor: true },
+  { text: "AI applied to a disciplined artifact ecosystem creates leverage. AI applied to a fragmented one amplifies the fragmentation.", category: "AI Governance", tag: "pointed", anchor: true },
+  { text: "AI does not replace governance. It gives governance better information to act on.", category: "AI Governance", tag: "pointed", anchor: true },
+  { text: "Responsible AI design begins with governance, not tooling. The first question is not what the model can produce, but where human review, approval, and override must remain.", category: "AI Governance", tag: "measured", anchor: true },
+  { text: "The goal is not automated prioritization. The goal is more consistent, explainable, and reviewable prioritization.", category: "AI Governance", tag: "pointed", anchor: false },
+  { text: "Better AI outcomes usually come from better question structure and workflow design, not just stronger models. That is what turns experimentation into operational leverage.", category: "AI Governance", tag: "measured", anchor: false },
+  { text: "An AI recommendation that cannot show its reasoning is not a recommendation. It is a guess with confidence.", category: "AI Governance", tag: "pointed", anchor: false },
+  { text: "AI governance is strongest when leaders can see not only the recommendation, but the criteria, evidence, and reasoning underneath it. That is what makes adoption responsible instead of performative.", category: "AI Governance", tag: "measured", anchor: true },
+];
+
 const TV_BARS = [
   { label: "Intake",     pct: 18, color: "#4caf82" },
   { label: "Review",     pct: 35, color: "#4caf82" },
@@ -1274,6 +1485,26 @@ function ToolVisual() {
 export default function Portfolio() {
   const [navSolid, setNavSolid] = useState(false);
   const [activeRole, setActiveRole] = useState(null);
+
+  // Daily operating principle — same quote shown to every visitor on the same day,
+  // rotates once per calendar day. Interleaves by category so consecutive days never
+  // repeat topic: Day 1 = Operating Models #1, Day 2 = Process Architecture #1,
+  // ..., Day 8 = AI Governance #1, Day 9 = Operating Models #2. Cycle = 64 days.
+  const [dailyQuote] = useState(() => {
+    const days = Math.floor(Date.now() / 86400000);
+    const NUM_CATEGORIES = 8;
+    const PER_CATEGORY = 8;
+    const categoryIndex = days % NUM_CATEGORIES;
+    const withinCategoryIndex = Math.floor(days / NUM_CATEGORIES) % PER_CATEGORY;
+    return QUOTES[categoryIndex * PER_CATEGORY + withinCategoryIndex];
+  });
+  const [todayString] = useState(() =>
+    new Date().toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    })
+  );
 
   useEffect(() => {
     const onScroll = () => setNavSolid(window.scrollY > 60);
@@ -1371,6 +1602,24 @@ export default function Portfolio() {
               <div className="proof-text" dangerouslySetInnerHTML={{ __html: p.text }} />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Daily Operating Principle ── */}
+      <section className="principle-section">
+        <div className="principle-inner">
+          <div className="principle-eyebrow">
+            <span className="principle-eyebrow-line" />
+            <span>On {dailyQuote.category}</span>
+            <span className="principle-eyebrow-line" />
+          </div>
+          <blockquote className="principle-quote">
+            &ldquo;{dailyQuote.text}&rdquo;
+          </blockquote>
+          <div className="principle-attribution">— Robert Frederick</div>
+          <div className="principle-meta">
+            Operating Principle <span className="principle-meta-dot">·</span> {todayString}
+          </div>
         </div>
       </section>
 
@@ -1508,7 +1757,7 @@ export default function Portfolio() {
               <div className="ev-action-top">
                 <div className="ev-action-label">White Paper</div>
                 <div className="ev-action-meta">
-                  7-page PDF<br />
+                  6-page PDF<br />
                   Original framework<br />
                   Direct download
                 </div>
@@ -1736,13 +1985,23 @@ export default function Portfolio() {
             <div className="about-sidebar">
               <div className="about-card">
                 <div className="about-card-title">Education</div>
-                <div className="about-item">
-                  <div className="about-item-title">MBA</div>
-                  <div className="about-item-sub">Dartmouth College, Tuck School of Business · 2001</div>
+                <div className="about-edu-item">
+                  <div className="about-edu-logo">
+                    <img src={ASSETS.logo_dartmouth} alt="Dartmouth College" />
+                  </div>
+                  <div className="about-edu-text">
+                    <div className="about-item-title">MBA</div>
+                    <div className="about-item-sub">Dartmouth College, Tuck School of Business · 2001</div>
+                  </div>
                 </div>
-                <div className="about-item">
-                  <div className="about-item-title">BS Commerce</div>
-                  <div className="about-item-sub">University of Virginia, McIntire School of Commerce · 1995 · MIS &amp; Marketing concentrations</div>
+                <div className="about-edu-item">
+                  <div className="about-edu-logo">
+                    <img src={ASSETS.logo_uva} alt="University of Virginia" />
+                  </div>
+                  <div className="about-edu-text">
+                    <div className="about-item-title">BS Commerce</div>
+                    <div className="about-item-sub">University of Virginia, McIntire School of Commerce · 1995 · MIS &amp; Marketing concentrations</div>
+                  </div>
                 </div>
               </div>
 
