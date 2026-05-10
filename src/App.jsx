@@ -1508,7 +1508,7 @@ export default function Portfolio() {
               <div className="ev-action-top">
                 <div className="ev-action-label">White Paper</div>
                 <div className="ev-action-meta">
-                  6-page PDF<br />
+                  7-page PDF<br />
                   Original framework<br />
                   Direct download
                 </div>
