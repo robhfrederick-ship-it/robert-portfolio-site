@@ -1629,7 +1629,7 @@ export default function Portfolio() {
           <div className="section-label">Core Capabilities</div>
           <h2 className="section-title">Where I add the most value.</h2>
           <p className="roles-intro">
-            Select a capability to see how I work and a representative example.
+            Select a capability to see examples of the value I bring to the table.
           </p>
           <div className="roles-grid">
             {[
@@ -1715,9 +1715,8 @@ export default function Portfolio() {
           <h2 className="section-title">Selected artifacts<br />and original frameworks.</h2>
           <p className="section-sub">
             Representative work products from live engagements alongside original frameworks
-            developed for publication. Structured so an evaluator can see the actual thinking —
-            governance design, portfolio sequencing, executive reporting, risk management — rather
-            than read a summary of it.
+            developed for publication. Structured to convey my insights in 
+            governance design, portfolio sequencing, executive reporting, risk management.
           </p>
 
           {/* ── White Paper: AI-Enabled Strategic Management ── */}
@@ -1736,10 +1735,10 @@ export default function Portfolio() {
                 governance over prioritization, approval, risk acceptance, and final decisions.
                 The paper diagnoses the structural gap between three disciplines that produce
                 different artifacts on different cadences with different ownership, then proposes
-                a circular model in which AI ingests, interprets, drafts, connects, and monitors
+                a model in which AI ingests, interprets, drafts, connects, and monitors
                 so that traceability and alignment are maintained continuously rather than
                 reconstructed during quarterly reviews. Includes the management gap analysis,
-                the model itself, the value categories organizations can expect, and five
+                the model itself, the value categories organizations can expect, and
                 principles for adoption sequenced from foundational to advanced.
               </p>
 
@@ -1757,7 +1756,7 @@ export default function Portfolio() {
               <div className="ev-action-top">
                 <div className="ev-action-label">White Paper</div>
                 <div className="ev-action-meta">
-                  6-page PDF<br />
+                  7-page PDF<br />
                   Original framework<br />
                   Direct download
                 </div>
@@ -1772,7 +1771,7 @@ export default function Portfolio() {
             <div>
               <div className="ev-meta-row">PMO Governance · Federal Science Agency · 2020–2024</div>
               <h3 className="ev-title">
-                Enterprise Governance, Portfolio Prioritization &amp; Executive Reporting
+                Enterprise Governance, Portfolio Prioritization, Dependency Management &amp; Executive Reporting
               </h3>
               <p className="ev-body">
                 Anonymized materials from a multi-year engagement at a federal science agency
@@ -1874,7 +1873,7 @@ export default function Portfolio() {
           <p className="section-sub-light">
             Working applications developed to support real analytical work. Not concepts or
             mockups — tools built on the same design logic I apply to operating model,
-            governance, and process work.
+            governance, data analysis and process work.
           </p>
 
           <div className="tool-feature">
@@ -1951,14 +1950,14 @@ export default function Portfolio() {
                 transformation usually breaks down at the seams between them. In the age of AI,
                 that matters even more. AI can accelerate analysis and improve decision support,
                 but only when the structure underneath it is well designed. My background in
-                systems, process design, and operating model work allows me to use AI as a
+                systems integration, process design, and operating model work allows me to use AI as a
                 force multiplier for building solutions that are more effective, scalable,
                 and durable.
               </p>
               <p>
                 Across 25 years, the pattern has been consistent: stepping into environments
                 where the operating model was broken, unclear, or nonexistent and leaving
-                behind something structured, usable, and running. That has included
+                behind something structured, practical, usable, and scalable. That has included
                 <strong> building NSF's PMO</strong>, standing up <strong>USCIS E-Verify's
                 analytics and case management unit</strong>, standardizing <strong>Marriott's
                 process taxonomy</strong> across global functions, and delivering a
@@ -2051,7 +2050,7 @@ export default function Portfolio() {
             <div>
               <p className="contact-intro">
                 For recruiters, hiring managers, and anyone evaluating fit for a senior
-                transformation, PMO, or operating-model role — the fastest path is email.
+                transformation, AI-enablement, PMO, or operating-model role — the fastest path is email.
                 I respond the same day.
               </p>
             </div>
