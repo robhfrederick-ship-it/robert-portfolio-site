@@ -9,6 +9,8 @@ const ASSETS = {
   whitePaper_AIStrategicMgmt: "/assets/RobertFrederick_AIEnabledStrategicMgmt_WhitePaper.pdf",
   article_FinanceTransform:   "/assets/RobertFrederick_FinanceTransformation_POV.pdf",
   tool_CycleTimeAnalyzer:     "https://cycle-time-analyzer.vercel.app/",
+  tool_CycleTimeSampleData:   "/assets/CycleTimeAnalyzer_SampleData.csv",
+  tool_CycleTimeSampleReport: "/assets/CycleTimeAnalyzer_SampleReport.pdf",
   linkedin:                   "https://www.linkedin.com/in/roberthfrederick/",
   email:                      "rob.h.frederick@gmail.com",
   calendly:                   "https://calendly.com/rob-h-frederick/30min",
@@ -930,6 +932,74 @@ body {
   gap: 10px;
 }
 .btn-launch:hover { background: var(--gold3); }
+
+/* ── Tool resources (sample CSV + sample report downloads) ── */
+.tool-resources {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.tool-resources-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.tool-resources-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tool-resource {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background .15s, border-color .15s;
+}
+.tool-resource:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(200, 150, 10, 0.4);
+}
+.tool-resource-kind {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--gold);
+  background: rgba(200, 150, 10, 0.12);
+  padding: 5px 9px;
+  flex-shrink: 0;
+}
+.tool-resource-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.tool-resource-meta {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.2px;
+  font-weight: 300;
+}
+.tool-resource-action {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
 .tool-visual {
   background: rgba(0,0,0,0.25);
   border: 1px solid rgba(200,150,10,0.1);
@@ -1279,8 +1349,8 @@ body {
 }
 .pov-pill-wrong {
   background: var(--cream2);
-  color: var(--warm);
-  border: 1px solid rgba(122, 110, 95, 0.35);
+  color: #5f5549;
+  border: 1px solid rgba(122, 110, 95, 0.55);
 }
 .pov-pill-right {
   background: var(--navy);
@@ -1292,6 +1362,30 @@ body {
   font-size: 22px;
   color: var(--gold);
   flex-shrink: 0;
+}
+
+/* ── Semantic markers (× / ✓) on contrast rows ── */
+.pov-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.pov-marker-wrong {
+  background: rgba(122, 110, 95, 0.12);
+  color: #5f5549;
+  border: 1.5px solid rgba(122, 110, 95, 0.55);
+}
+.pov-marker-right {
+  background: rgba(200, 150, 10, 0.15);
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
 }
 
 /* ── Centerpiece (converging Venn) ── */
@@ -2152,11 +2246,13 @@ export default function Portfolio() {
           {/* Top contrast visual */}
           <div className="pov-contrast" data-pov-animate>
             <div className="pov-row pov-row-wrong">
+              <span className="pov-marker pov-marker-wrong" aria-label="Wrong approach">✕</span>
               <div className="pov-pill pov-pill-wrong">Bolt AI on</div>
               <span className="pov-arrow-symbol" aria-hidden="true">→</span>
               <div className="pov-pill pov-pill-wrong">Amplified problems</div>
             </div>
             <div className="pov-row pov-row-right">
+              <span className="pov-marker pov-marker-right" aria-label="Right approach">✓</span>
               <div className="pov-pill pov-pill-right">Design AI in</div>
               <span className="pov-arrow-symbol" aria-hidden="true">→</span>
               <div className="pov-pill pov-pill-right">Accountable execution</div>
@@ -2664,6 +2760,37 @@ export default function Portfolio() {
               <a className="btn-launch" href={ASSETS.tool_CycleTimeAnalyzer} target="_blank" rel="noopener noreferrer">
                 Launch Application →
               </a>
+
+              <div className="tool-resources">
+                <div className="tool-resources-label">Try it yourself</div>
+                <div className="tool-resources-links">
+                  <a
+                    className="tool-resource"
+                    href={ASSETS.tool_CycleTimeSampleData}
+                    download
+                  >
+                    <span className="tool-resource-kind">CSV</span>
+                    <span className="tool-resource-text">
+                      Sample dataset
+                      <span className="tool-resource-meta">425 transactions · 6-step process · wide format</span>
+                    </span>
+                    <span className="tool-resource-action">Download ↓</span>
+                  </a>
+                  <a
+                    className="tool-resource"
+                    href={ASSETS.tool_CycleTimeSampleReport}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="tool-resource-kind">PDF</span>
+                    <span className="tool-resource-text">
+                      Sample output report
+                      <span className="tool-resource-meta">Full analysis generated from the sample data</span>
+                    </span>
+                    <span className="tool-resource-action">View ↓</span>
+                  </a>
+                </div>
+              </div>
             </div>
             <ToolVisual />
           </div>
