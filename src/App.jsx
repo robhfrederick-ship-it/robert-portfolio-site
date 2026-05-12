@@ -477,48 +477,6 @@ body {
   border-left: 2px solid var(--gold);
 }
 
-/* ── Employers Strip ── */
-.employers-strip {
-  background: var(--cream);
-  padding: 40px 48px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-.employers-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.employers-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--warm);
-  flex-shrink: 0;
-  padding-right: 32px;
-  border-right: 1px solid rgba(0,0,0,0.12);
-}
-.employers-logos {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  align-items: center;
-  flex: 1;
-}
-.employer-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(0,0,0,0.28);
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-  transition: color .2s;
-}
-.employer-name:hover { color: var(--text); }
-
 /* ── Section common ── */
 .section { padding: 100px 48px; }
 .section-dark { background: var(--navy); }
@@ -842,11 +800,11 @@ body {
 }
 .wr-action {
   border-left: 1px solid rgba(0,0,0,0.08);
-  padding-left: 28px;
+  padding-left: 32px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  justify-content: center;
+  gap: 12px;
+  justify-content: space-between;
 }
 
 .library-note {
@@ -1089,6 +1047,45 @@ body {
   color: rgba(255,255,255,0.4);
   margin-top: 3px;
 }
+
+/* ── Notable Organizations (Capabilities section, light context) ── */
+.capability-clients {
+  margin-top: 40px;
+  padding: 36px 40px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-left: 3px solid var(--gold);
+}
+.capability-clients-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.capability-clients-group {
+  margin-bottom: 22px;
+}
+.capability-clients-group:last-child {
+  margin-bottom: 0;
+}
+.capability-clients-subhead {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.capability-clients-list {
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.95;
+  letter-spacing: 0.1px;
+}
 .about-edu-item {
   display: grid;
   grid-template-columns: 52px 1fr;
@@ -1211,6 +1208,290 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   POINT OF VIEW SECTION
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Layout ── */
+.pov-intro {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 56px;
+}
+.pov-intro .section-title { margin-bottom: 18px; }
+.pov-intro-sub {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--warm);
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.pov-sub-section {
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.pov-sub-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+.pov-prose {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.pov-prose strong { font-weight: 600; color: var(--navy); }
+.pov-defined-term {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--navy);
+  border-bottom: 1px dotted var(--gold);
+  padding-bottom: 1px;
+}
+
+/* ── Top contrast visual ── */
+.pov-contrast { max-width: 720px; margin: 0 auto 72px; }
+.pov-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 16px;
+  opacity: 0;
+}
+.pov-pill {
+  flex: 1;
+  text-align: center;
+  padding: 18px 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border-radius: 4px;
+}
+.pov-pill-wrong {
+  background: var(--cream2);
+  color: var(--warm);
+  border: 1px solid rgba(122, 110, 95, 0.35);
+}
+.pov-pill-right {
+  background: var(--navy);
+  color: var(--gold2);
+  border: 1px solid var(--gold);
+}
+.pov-arrow-symbol {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ── Centerpiece (converging Venn) ── */
+.pov-venn-svg {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 32px auto 56px;
+  display: block;
+}
+.pov-card-title-light {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  fill: var(--gold2);
+}
+.pov-card-title-dark {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  fill: var(--navy);
+}
+.pov-card-item-light {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  fill: rgba(255, 255, 255, 0.85);
+}
+.pov-card-item-dark {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  fill: var(--text);
+}
+.pov-blend-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  fill: var(--navy);
+  letter-spacing: 0.4px;
+}
+.pov-blend-caption {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  fill: var(--warm);
+}
+.pov-venn-svg .system-card,
+.pov-venn-svg .human-card { opacity: 0; }
+.pov-venn-svg .arrow-left,
+.pov-venn-svg .arrow-right {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  opacity: 0;
+}
+.pov-venn-svg .blend-pill {
+  opacity: 0;
+  transform: scale(0.92);
+}
+.pov-venn-svg .blend-caption { opacity: 0; }
+
+/* ── Timeline ── */
+.pov-timeline-svg {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 32px auto 32px;
+  display: block;
+}
+.pov-step-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  fill: var(--navy);
+}
+.pov-step-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  fill: var(--text);
+}
+.pov-outcome-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  fill: var(--navy);
+  letter-spacing: 0.3px;
+}
+.pov-timeline-svg .step-group { opacity: 0; }
+.pov-timeline-svg .timeline-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  opacity: 0;
+}
+.pov-timeline-svg .outcome-group {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+/* Cross-browser reliable scale-in for SVG groups.
+   transform-box: fill-box makes transform-origin relative to the element's
+   own bounding box rather than the SVG canvas, which avoids inconsistent
+   scaling behavior in Safari. */
+.pov-venn-svg .blend-pill,
+.pov-timeline-svg .outcome-group {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ── Pull quote (closing line) ── */
+.pov-pullquote {
+  max-width: 720px;
+  margin: 56px auto 0;
+  padding: 28px 0 28px 32px;
+  border-left: 4px solid var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--navy);
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ── Scroll-triggered animations ── */
+.pov-intro [data-pov-stagger] { opacity: 0; }
+.pov-intro.is-visible [data-pov-stagger]:nth-child(1) {
+  animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+.pov-intro.is-visible [data-pov-stagger]:nth-child(2) {
+  animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+.pov-contrast.is-visible .pov-row-wrong {
+  animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+.pov-contrast.is-visible .pov-row-right {
+  animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+.pov-sub-section [data-pov-stagger] { opacity: 0; }
+.pov-sub-section.is-visible [data-pov-stagger]:nth-child(1) { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards; }
+.pov-sub-section.is-visible [data-pov-stagger]:nth-child(2) { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards; }
+.pov-sub-section.is-visible [data-pov-stagger]:nth-child(3) { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards; }
+.pov-sub-section.is-visible [data-pov-stagger]:nth-child(4) { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards; }
+.pov-sub-section.is-visible [data-pov-stagger]:nth-child(5) { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.48s forwards; }
+.pov-sub-section.is-visible [data-pov-stagger]:nth-child(6) { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards; }
+.pov-venn-svg.is-visible .system-card { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards; }
+.pov-venn-svg.is-visible .human-card { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards; }
+.pov-venn-svg.is-visible .arrow-left,
+.pov-venn-svg.is-visible .arrow-right { animation: povDrawLine 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards; }
+.pov-venn-svg.is-visible .blend-pill { animation: povScaleIn 0.5s cubic-bezier(0.34, 1.3, 0.64, 1) 1.45s forwards; }
+.pov-venn-svg.is-visible .blend-caption { animation: povFadeIn 0.4s ease 1.95s forwards; }
+.pov-timeline-svg.is-visible .step-1 { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards; }
+.pov-timeline-svg.is-visible .line-12 { animation: povDrawLine 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards; }
+.pov-timeline-svg.is-visible .step-2 { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards; }
+.pov-timeline-svg.is-visible .line-23 { animation: povDrawLine 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards; }
+.pov-timeline-svg.is-visible .step-3 { animation: povFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.48s forwards; }
+.pov-timeline-svg.is-visible .line-down { animation: povDrawLine 0.4s cubic-bezier(0.16, 1, 0.3, 1) 1.0s forwards; }
+.pov-timeline-svg.is-visible .outcome-group { animation: povScaleIn 0.5s cubic-bezier(0.34, 1.3, 0.64, 1) 1.45s forwards; }
+.pov-pullquote.is-visible { animation: povScaleIn 0.5s cubic-bezier(0.34, 1.3, 0.64, 1) forwards; }
+
+/* ── Keyframes ── */
+@keyframes povFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes povFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes povScaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes povDrawLine {
+  to { stroke-dashoffset: 0; opacity: 0.75; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .pov-intro [data-pov-stagger],
+  .pov-sub-section [data-pov-stagger],
+  .pov-contrast .pov-row,
+  .pov-venn-svg .system-card,
+  .pov-venn-svg .human-card,
+  .pov-venn-svg .arrow-left,
+  .pov-venn-svg .arrow-right,
+  .pov-venn-svg .blend-pill,
+  .pov-venn-svg .blend-caption,
+  .pov-timeline-svg .step-group,
+  .pov-timeline-svg .timeline-line,
+  .pov-timeline-svg .outcome-group,
+  .pov-pullquote {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
 @media (max-width: 900px) {
   .nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -1219,11 +1500,7 @@ body {
   .principle-section { padding: 56px 24px 64px; }
   .principle-section::after { font-size: 180px; left: 12px; top: 20px; }
   .roles-grid { grid-template-columns: 1fr; }
-  .employers-inner { gap: 20px; }
-  .employers-label { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(0,0,0,0.12); padding-bottom: 12px; width: 100%; }
-  .employers-logos { gap: 20px; }
   .roles-section { padding: 52px 24px; }
-  .employers-strip { padding: 28px 24px; }
   .section { padding: 64px 24px; }
   .pillars-grid { grid-template-columns: 1fr; }
   .evidence-card { grid-template-columns: 1fr; gap: 28px; padding: 32px; }
@@ -1231,13 +1508,21 @@ body {
   .writing-card { grid-template-columns: 1fr; gap: 20px; padding: 32px; }
   .wr-date-block { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); padding-right: 0; padding-bottom: 16px; flex-direction: row; gap: 12px; align-items: baseline; }
   .wr-kind { padding-top: 0; margin-left: auto; }
-  .wr-action { border-left: none; padding-left: 0; }
+  .wr-action { border-left: none; border-top: 1px solid rgba(0,0,0,0.08); padding-left: 0; padding-top: 24px; }
   .tool-feature { grid-template-columns: 1fr; padding: 32px; gap: 36px; }
   .tool-visual { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-resume-cta { flex-direction: column; align-items: flex-start; }
   .contact-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+  /* Point of View responsive */
+  .pov-sub-title { font-size: 24px; }
+  .pov-prose { font-size: 16px; }
+  .pov-pullquote { font-size: 21px; padding: 20px 0 20px 22px; }
+  .pov-row { flex-direction: column; gap: 12px; }
+  .pov-arrow-symbol { transform: rotate(90deg); }
+  .pov-card-item-light, .pov-card-item-dark { font-size: 14px; }
+  .pov-step-label { font-size: 12px; }
 }
 `;
 
@@ -1512,6 +1797,29 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Scroll-triggered animations for the Point of View section.
+  // Adds .is-visible to any element with [data-pov-animate] when it
+  // enters the viewport. Fires once per element, then stops observing.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    document.querySelectorAll("[data-pov-animate]").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -1534,11 +1842,11 @@ export default function Portfolio() {
         </div>
         <div className="nav-links">
           {[
-            ["Capabilities", "capabilities"],
-            ["Work",    "work"],
-            ["Insights", "writing"],
-            ["Tools",   "tools"],
             ["About",   "about"],
+            ["Capabilities", "capabilities"],
+            ["Point of View", "point-of-view"],
+            ["Insights and Samples", "insights-and-samples"],
+            ["Tools",   "tools"],
             ["Contact", "contact"],
           ].map(([label, id]) => (
             <button key={id} className="nav-link" onClick={() => scrollTo(id)}>{label}</button>
@@ -1568,7 +1876,7 @@ export default function Portfolio() {
           </p>
 
           <div className="hero-ctas">
-            <button className="btn-primary" onClick={() => scrollTo("work")}>
+            <button className="btn-primary" onClick={() => scrollTo("insights-and-samples")}>
               View Work →
             </button>
             <a className="btn-outline" href={ASSETS.resume} download>
@@ -1619,312 +1927,6 @@ export default function Portfolio() {
           <div className="principle-attribution">— Robert Frederick</div>
           <div className="principle-meta">
             Operating Principle <span className="principle-meta-dot">·</span> {todayString}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Best Fit Roles ── */}
-      <section className="roles-section" id="capabilities">
-        <div className="max-w">
-          <div className="section-label">Core Capabilities</div>
-          <h2 className="section-title">Where I add the most value.</h2>
-          <p className="roles-intro">
-            Select a capability to see examples of the value I bring to the table.
-          </p>
-          <div className="roles-grid">
-            {[
-              "Operating Model & Execution Design",
-              "Business Process Architecture & Optimization",
-              "Project Management & Governance",
-              "Business & Digital Transformation",
-              "Data Analysis & Performance Measurement",
-              "Change Enablement & Adoption",
-              "Systems Development",
-              "AI Enablement & Governance",
-            ].map((role) => (
-              <button
-                key={role}
-                className={`role-tile${activeRole === role ? " active" : ""}`}
-                onClick={() => setActiveRole(activeRole === role ? null : role)}
-                type="button"
-              >
-                <div className="role-tile-icon">→</div>
-                <div className="role-tile-text">{role}</div>
-              </button>
-            ))}
-          </div>
-
-          {activeRole && ROLE_SUMMARIES[activeRole] && (
-            <div className="role-summary-box">
-              <div className="role-summary-label">Capability</div>
-              <h3 className="role-summary-title">{activeRole}</h3>
-              <p className="role-summary-body">{ROLE_SUMMARIES[activeRole].body}</p>
-              <div className="role-summary-highlight-label">Representative Example</div>
-              <p className="role-summary-highlight">{ROLE_SUMMARIES[activeRole].highlight}</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* ── Selected Employers ── */}
-      <div className="employers-strip">
-        <div className="employers-inner">
-          <div className="employers-label">Selected Organizations</div>
-          <div className="employers-logos">
-            {["Marriott International", "NSF", "USCIS / E-Verify", "Accenture", "Publicis Sapient"].map((e) => (
-              <div className="employer-name" key={e}>{e}</div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── What I Build (Pillars) ── */}
-      <section className="section section-dark" id="approach">
-        <div className="max-w">
-          <div className="section-label-dark">What I Build</div>
-          <h2 className="section-title-light">Three layers.<br />One designed system.</h2>
-          <p className="section-sub-light">
-            Execution breaks down when governance, process, and analytical logic are treated
-            as separate problems. I work across all three because durable solutions depend on
-            how well those layers are designed to work together. That is especially true in
-            the age of AI, where better outputs depend on better structure, better questions,
-            and better underlying design.
-          </p>
-
-          <div className="pillars-grid">
-            {PILLARS.map((p) => (
-              <div className="pillar" key={p.num}>
-                <div className="pillar-num">{p.num}</div>
-                <div className="pillar-title">{p.title}</div>
-                <p className="pillar-body">{p.body}</p>
-                <ul className="pillar-proofs">
-                  {p.proofs.map((pr, i) => (
-                    <li className="pillar-proof" key={i}>{pr}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Work Samples ── */}
-      <section className="section section-light" id="work">
-        <div className="max-w">
-          <div className="section-label">Work Samples</div>
-          <h2 className="section-title">Selected artifacts<br />and original frameworks.</h2>
-          <p className="section-sub">
-            Representative work products from live engagements alongside original frameworks
-            developed for publication. Structured to convey my insights in 
-            governance design, portfolio sequencing, executive reporting, risk management.
-          </p>
-
-          {/* ── White Paper: AI-Enabled Strategic Management ── */}
-          <div className="evidence-card" style={{ marginBottom: 16 }}>
-            <div>
-              <div className="ev-meta-row">White Paper · AI Governance &amp; Strategic Management · May 2026</div>
-              <h3 className="ev-title">
-                AI-Enabled Strategic Management &amp; Execution Model
-              </h3>
-              <p className="ev-body" style={{ fontStyle: "italic", marginBottom: 12, color: "var(--warm)" }}>
-                Connecting Strategy, Execution, and Continuous Improvement Under Human Governance
-              </p>
-              <p className="ev-body">
-                An original framework positioning AI as the connective layer across strategic
-                planning, project execution, and process improvement — while preserving human
-                governance over prioritization, approval, risk acceptance, and final decisions.
-                The paper diagnoses the structural gap between three disciplines that produce
-                different artifacts on different cadences with different ownership, then proposes
-                a model in which AI ingests, interprets, drafts, connects, and monitors
-                so that traceability and alignment are maintained continuously rather than
-                reconstructed during quarterly reviews. Includes the management gap analysis,
-                the model itself, the value categories organizations can expect, and
-                principles for adoption sequenced from foundational to advanced.
-              </p>
-
-              <div className="ev-demonstrates-label">What it demonstrates</div>
-              <ul className="ev-demo-list">
-                <li>AI Governance Design</li>
-                <li>Strategic Management Architecture</li>
-                <li>Operating Model Frameworks</li>
-                <li>Cross-Discipline Integration</li>
-                <li>Original Thought Leadership</li>
-              </ul>
-            </div>
-
-            <div className="ev-action">
-              <div className="ev-action-top">
-                <div className="ev-action-label">White Paper</div>
-                <div className="ev-action-meta">
-                  7-page PDF<br />
-                  Original framework<br />
-                  Direct download
-                </div>
-              </div>
-              <a className="btn-dl" href={ASSETS.whitePaper_AIStrategicMgmt} target="_blank" rel="noopener noreferrer">
-                View White Paper →
-              </a>
-            </div>
-          </div>
-
-          <div className="evidence-card">
-            <div>
-              <div className="ev-meta-row">PMO Governance · Federal Science Agency · 2020–2024</div>
-              <h3 className="ev-title">
-                Enterprise Governance, Portfolio Prioritization, Dependency Management &amp; Executive Reporting
-              </h3>
-              <p className="ev-body">
-                Anonymized materials from a multi-year engagement at a federal science agency
-                supporting a congressionally mandated publication program and a broader portfolio
-                prioritization effort. Includes executive status reporting, risk register design,
-                stakeholder coordination structures, and a five-tier criteria framework for
-                sequencing competing releases across a shared production environment. The
-                publication program delivered on time for the first time in seven years.
-              </p>
-
-              <div className="ev-demonstrates-label">What it demonstrates</div>
-              <ul className="ev-demo-list">
-                <li>PMO Governance</li>
-                <li>Portfolio Sequencing</li>
-                <li>Executive Reporting</li>
-                <li>Risk Management</li>
-                <li>Stakeholder Coordination</li>
-              </ul>
-            </div>
-
-            <div className="ev-action">
-              <div className="ev-action-top">
-                <div className="ev-action-label">Work Sample</div>
-                <div className="ev-action-meta">
-                  11-page PDF<br />
-                  Anonymized<br />
-                  Direct download
-                </div>
-              </div>
-              <a className="btn-dl" href={ASSETS.workSample_NSF} target="_blank" rel="noopener noreferrer">
-                View Sample →
-              </a>
-            </div>
-          </div>
-
-          <div className="library-note">
-            <strong>Library growing.</strong> Additional work samples — operating model
-            artifacts, process architecture, and governance frameworks — publishing throughout 2026.
-          </div>
-        </div>
-      </section>
-
-      {/* ── Writing / Insights ── */}
-      <section className="section section-mid" id="writing">
-        <div className="max-w">
-          <div className="section-label">Insights</div>
-          <h2 className="section-title">Points of view on operating model,<br />transformation, and execution.</h2>
-          <p className="section-sub">
-            Essays on the questions I keep seeing in large-scale transformation work — especially
-            the gap between the technology being implemented and the operating model underneath it.
-          </p>
-
-          <div className="writing-card">
-            <div className="wr-date-block">
-              <div className="wr-date-label">Published</div>
-              <div className="wr-date">Mar 28</div>
-              <div className="wr-date-year">2026</div>
-              <div className="wr-kind">Point of View</div>
-            </div>
-
-            <div>
-              <h3 className="wr-title">
-                The System Is the Visible Investment. The Operating Model Is the Real Transformation.
-              </h3>
-              <p className="wr-body">
-                A brief perspective on what large state finance modernization programs —
-                Washington's One Washington and Maryland's 21st Century Financial Systems
-                initiative among them — reveal about the part of transformation that rarely
-                gets discussed: the operating-model decisions underneath the technology. The
-                system gets announced, funded, and measured. The operating burden is what
-                actually determines whether modernization produces durable improvement.
-              </p>
-              <div className="wr-tags">
-                {["Finance Transformation", "Operating Model", "Public Sector", "State Government"].map(t => (
-                  <span className="wr-tag" key={t}>{t}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="wr-action">
-              <a className="btn-dl" href={ASSETS.article_FinanceTransform} target="_blank" rel="noopener noreferrer">
-                Read Essay →
-              </a>
-            </div>
-          </div>
-
-          <div className="library-note">
-            <strong>More essays in progress.</strong> Additional pieces on governance design,
-            PMO operating rhythms, and AI-enabled workflow publishing throughout 2026.
-          </div>
-        </div>
-      </section>
-
-      {/* ── Tools ── */}
-      <section className="section section-dark" id="tools">
-        <div className="max-w">
-          <div className="section-label-dark">Tools</div>
-          <h2 className="section-title-light">Analytical tools I've built,<br />not just described.</h2>
-          <p className="section-sub-light">
-            Working applications developed to support real analytical work. Not concepts or
-            mockups — tools built on the same design logic I apply to operating model,
-            governance, data analysis and process work.
-          </p>
-
-          <div className="tool-feature">
-            <div>
-              <div className="tool-tag-row">
-                <div className="tool-tag">Interactive Application</div>
-                <div className="tool-status">Live</div>
-              </div>
-              <h3 className="tool-title">Cycle Time Analyzer</h3>
-              <p className="tool-body">
-                A transaction-level process diagnostic tool. Ingests raw CSV data in wide
-                format or event-log format and produces Six Sigma metrics, process capability
-                indices, dual analysis windows, data quality audits, and an AI-generated
-                narrative report.
-              </p>
-
-              <div className="tool-spec">
-                <div className="tool-spec-label">Problem</div>
-                <div className="tool-spec-value">
-                  Cycle-time variance and process drift are easy to claim, hard to demonstrate
-                  with transaction data.
-                </div>
-
-                <div className="tool-spec-label">Inputs</div>
-                <div className="tool-spec-value">
-                  Wide-format or event-log CSV; user-mapped columns; configurable analysis windows.
-                </div>
-
-                <div className="tool-spec-label">Outputs</div>
-                <div className="tool-spec-value">
-                  Cp/Cpk indices · coefficient of variation · value-add ratio · sigma levels ·
-                  data quality diagnostics · AI narrative report · PDF export.
-                </div>
-
-                <div className="tool-spec-label">Supports</div>
-                <div className="tool-spec-value">
-                  Process redesign decisions, executive capability reporting, and diagnostic
-                  conversations with operations leadership.
-                </div>
-              </div>
-
-              <a className="btn-launch" href={ASSETS.tool_CycleTimeAnalyzer} target="_blank" rel="noopener noreferrer">
-                Launch Application →
-              </a>
-            </div>
-            <ToolVisual />
-          </div>
-
-          <div className="tools-note">
-            <strong>Additional analytical tools in development.</strong> More applications
-            publishing as they reach working state.
           </div>
         </div>
       </section>
@@ -2005,7 +2007,7 @@ export default function Portfolio() {
               </div>
 
               <div className="about-card">
-                <div className="about-card-title">Certifications</div>
+                <div className="about-card-title">Certifications and Training</div>
                 {[
                   ["PMP",                          "PMI · 2011"],
                   ["Six Sigma Green Belt",         "Kennesaw University · 2025"],
@@ -2019,26 +2021,660 @@ export default function Portfolio() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="about-card">
-                <div className="about-card-title">Selected Engagements</div>
-                {[
-                  ["Marriott International",      "Sr. Manager, BP Center of Excellence"],
-                  ["Portfolio Alignment Partners", "Sr. Consultant, AI Enablement"],
-                  ["Windsor Group · NSF",         "Sr. Manager, PMO"],
-                  ["Publicis Sapient",            "Manager, Operations &amp; Transformation"],
-                  ["Accenture",                   "Sr. Associate, BPR &amp; Systems Integration"],
-                ].map(([org, role]) => (
-                  <div className="about-item" key={org}>
-                    <div className="about-item-title">{org}</div>
-                    <div className="about-item-sub" dangerouslySetInnerHTML={{ __html: role }} />
-                  </div>
-                ))}
+      {/* ── Best Fit Roles ── */}
+      <section className="roles-section" id="capabilities">
+        <div className="max-w">
+          <div className="section-label">Core Capabilities</div>
+          <h2 className="section-title">Where I Deliver Value</h2>
+          <p className="roles-intro">
+            Select a capability to see examples of the value I bring to the table.
+          </p>
+          <div className="roles-grid">
+            {[
+              "Operating Model & Execution Design",
+              "Business Process Architecture & Optimization",
+              "Project Management & Governance",
+              "Business & Digital Transformation",
+              "Data Analysis & Performance Measurement",
+              "Change Enablement & Adoption",
+              "Systems Development",
+              "AI Enablement & Governance",
+            ].map((role) => (
+              <button
+                key={role}
+                className={`role-tile${activeRole === role ? " active" : ""}`}
+                onClick={() => setActiveRole(activeRole === role ? null : role)}
+                type="button"
+              >
+                <div className="role-tile-icon">→</div>
+                <div className="role-tile-text">{role}</div>
+              </button>
+            ))}
+          </div>
+
+          {activeRole && ROLE_SUMMARIES[activeRole] && (
+            <div className="role-summary-box">
+              <div className="role-summary-label">Capability</div>
+              <h3 className="role-summary-title">{activeRole}</h3>
+              <p className="role-summary-body">{ROLE_SUMMARIES[activeRole].body}</p>
+              <div className="role-summary-highlight-label">Representative Example</div>
+              <p className="role-summary-highlight">{ROLE_SUMMARIES[activeRole].highlight}</p>
+            </div>
+          )}
+
+          {/* ── Notable Organizations — where these capabilities have been delivered ── */}
+          <div className="capability-clients">
+            <div className="capability-clients-title">Notable Organizations</div>
+
+            <div className="capability-clients-group">
+              <div className="capability-clients-subhead">Federal &amp; Public Sector</div>
+              <div className="capability-clients-list">
+                National Science Foundation · Department of Homeland Security ·
+                USCIS E-Verify · Customs and Border Protection ·
+                Centers for Medicare and Medicaid ·
+                Department of Housing and Urban Development ·
+                United States Postal Service ·
+                Maryland Department of Transportation
+              </div>
+            </div>
+
+            <div className="capability-clients-group">
+              <div className="capability-clients-subhead">Non-Profit</div>
+              <div className="capability-clients-list">
+                National Rural Electric Cooperative Association ·
+                The Institutes · Arlington Thrive · Crystal Stairs
+              </div>
+            </div>
+
+            <div className="capability-clients-group">
+              <div className="capability-clients-subhead">Commercial</div>
+              <div className="capability-clients-list">
+                Marriott International · The Hartford · Accenture ·
+                Publicis Sapient · Becton Dickinson · ADT Home Security
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── What I Build (Pillars) ── */}
+      <section className="section section-dark" id="approach">
+        <div className="max-w">
+          <div className="section-label-dark">What I Build</div>
+          <h2 className="section-title-light">Three layers.<br />One designed system.</h2>
+          <p className="section-sub-light">
+            Execution breaks down when governance, process, and analytical logic are treated
+            as separate problems. I work across all three because durable solutions depend on
+            how well those layers are designed to work together. That is especially true in
+            the age of AI, where better outputs depend on better structure, better questions,
+            and better underlying design.
+          </p>
+
+          <div className="pillars-grid">
+            {PILLARS.map((p) => (
+              <div className="pillar" key={p.num}>
+                <div className="pillar-num">{p.num}</div>
+                <div className="pillar-title">{p.title}</div>
+                <p className="pillar-body">{p.body}</p>
+                <ul className="pillar-proofs">
+                  {p.proofs.map((pr, i) => (
+                    <li className="pillar-proof" key={i}>{pr}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── Point of View ── */}
+      <section className="section section-light" id="point-of-view">
+        <div className="max-w">
+          <div className="section-label">Point of View</div>
+
+          {/* Section intro */}
+          <div className="pov-intro" data-pov-animate>
+            <h2 className="section-title" data-pov-stagger>
+              AI is not a replacement for design.<br />
+              It is a reason to commit to it.
+            </h2>
+            <p className="pov-intro-sub" data-pov-stagger>
+              AI does not fix unfinished design. It amplifies it.
+            </p>
+          </div>
+
+          {/* Top contrast visual */}
+          <div className="pov-contrast" data-pov-animate>
+            <div className="pov-row pov-row-wrong">
+              <div className="pov-pill pov-pill-wrong">Bolt AI on</div>
+              <span className="pov-arrow-symbol" aria-hidden="true">→</span>
+              <div className="pov-pill pov-pill-wrong">Amplified problems</div>
+            </div>
+            <div className="pov-row pov-row-right">
+              <div className="pov-pill pov-pill-right">Design AI in</div>
+              <span className="pov-arrow-symbol" aria-hidden="true">→</span>
+              <div className="pov-pill pov-pill-right">Accountable execution</div>
+            </div>
+          </div>
+
+          {/* Subsection 1 — What goes wrong */}
+          <div className="pov-sub-section" data-pov-animate>
+            <h3 className="pov-sub-title" data-pov-stagger>
+              What goes wrong when AI meets unfinished design
+            </h3>
+            <p className="pov-prose" data-pov-stagger>
+              The organizations that struggle with AI are the ones that hope it will
+              compensate for design they never finished. The symptoms are predictable:
+              operating models that nobody can draw on a whiteboard, decision rights
+              that depend on which manager you ask, processes brittle enough that one
+              missing person breaks the work, and accountability that disappears the
+              moment something goes wrong.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              AI doesn't fix any of that. It amplifies it. A pilot that automates an
+              unclear process produces unclear output faster. A model deployed without
+              governance produces unaccountable decisions at scale. A capability
+              bolted onto a fragile operating model makes the fragility load-bearing.
+              The pattern is consistent across federal, non-profit, and commercial
+              environments. The pattern is the warning.
+            </p>
+          </div>
+
+          {/* Subsection 2 — What AI really is (intro prose) */}
+          <div className="pov-sub-section" data-pov-animate>
+            <h3 className="pov-sub-title" data-pov-stagger>
+              What AI really is
+            </h3>
+            <p className="pov-prose" data-pov-stagger>
+              The organizations that succeed with AI start somewhere different.
+              They commit to their design first. They define what the future state
+              actually looks like, how decisions get made, and who owns what. Then
+              they bring AI into it deliberately.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              Here's the wrinkle that changes everything:{" "}
+              <strong>AI is the blend between an IT system and a human.</strong>{" "}
+              It performs work that used to require both. That means your
+              future-state design is no longer a choice between "automate it" or
+              "staff it." There's a third option, and it reshapes the whole picture
+              across operating model, governance, talent, and execution.
+            </p>
+          </div>
+
+          {/* Converging Venn — centerpiece visual */}
+          <svg
+            viewBox="0 0 680 380"
+            className="pov-venn-svg"
+            data-pov-animate
+            role="img"
+            aria-labelledby="venn-title venn-desc"
+          >
+            <title id="venn-title">AI as the blend of system properties and human properties</title>
+            <desc id="venn-desc">
+              Two property cards converge into a central AI pill. The left card,
+              labeled System properties, lists Speed, Scale, and Tirelessness. The
+              right card, labeled Human properties, lists Comprehension, Judgment,
+              and Intent. Both feed via arrows into a central pill labeled AI = the
+              blend. A caption beneath reads: A single capability where system and
+              human qualities coexist.
+            </desc>
+
+            <defs>
+              <marker
+                id="pov-venn-arrow"
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path
+                  d="M2 1L8 5L2 9"
+                  fill="none"
+                  stroke="context-stroke"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </marker>
+            </defs>
+
+            {/* System card (navy fill, gold accents) */}
+            <g className="system-card">
+              <rect x="80" y="40" width="200" height="170" rx="4"
+                    fill="#0d1b2a" stroke="#c8960a" strokeWidth="1" />
+              <text x="180" y="72" textAnchor="middle" className="pov-card-title-light">
+                System properties
+              </text>
+              <line x1="100" y1="90" x2="260" y2="90"
+                    stroke="#c8960a" strokeWidth="0.5" opacity="0.5" />
+              <text x="180" y="125" textAnchor="middle" className="pov-card-item-light">Speed</text>
+              <text x="180" y="155" textAnchor="middle" className="pov-card-item-light">Scale</text>
+              <text x="180" y="185" textAnchor="middle" className="pov-card-item-light">Tirelessness</text>
+            </g>
+
+            {/* Human card (cream fill, warm accents) */}
+            <g className="human-card">
+              <rect x="400" y="40" width="200" height="170" rx="4"
+                    fill="#ede8df" stroke="#7a6e5f" strokeWidth="1" />
+              <text x="500" y="72" textAnchor="middle" className="pov-card-title-dark">
+                Human properties
+              </text>
+              <line x1="420" y1="90" x2="580" y2="90"
+                    stroke="#7a6e5f" strokeWidth="0.5" opacity="0.5" />
+              <text x="500" y="125" textAnchor="middle" className="pov-card-item-dark">Comprehension</text>
+              <text x="500" y="155" textAnchor="middle" className="pov-card-item-dark">Judgment</text>
+              <text x="500" y="185" textAnchor="middle" className="pov-card-item-dark">Intent</text>
+            </g>
+
+            {/* Converging arrows in gold */}
+            <line className="arrow-left"
+                  x1="180" y1="216" x2="295" y2="262"
+                  stroke="#c8960a" strokeWidth="1.5"
+                  markerEnd="url(#pov-venn-arrow)" />
+            <line className="arrow-right"
+                  x1="500" y1="216" x2="385" y2="262"
+                  stroke="#c8960a" strokeWidth="1.5"
+                  markerEnd="url(#pov-venn-arrow)" />
+
+            {/* AI = the blend pill (gold fill, navy text — the punctum) */}
+            <g className="blend-pill">
+              <rect x="200" y="270" width="280" height="58" rx="29"
+                    fill="#c8960a" stroke="#0d1b2a" strokeWidth="1" />
+              <text x="340" y="307" textAnchor="middle" className="pov-blend-text">
+                AI = the blend
+              </text>
+            </g>
+
+            {/* Caption */}
+            <text x="340" y="358" textAnchor="middle"
+                  className="pov-blend-caption blend-caption">
+              A single capability where system and human qualities coexist.
+            </text>
+          </svg>
+
+          {/* Subsection 2 — closing prose (defends the distinction) */}
+          <div className="pov-sub-section" data-pov-animate>
+            <p className="pov-prose" data-pov-stagger>
+              Some will say AI is its own thing, a separate capability alongside
+              systems and people. I'd argue something more specific.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              AI's distinctive power isn't a new ingredient added to the mix. It's
+              that <em className="pov-defined-term">system-properties</em>{" "}
+              (speed, scale, tirelessness) and{" "}
+              <em className="pov-defined-term">human-properties</em>{" "}
+              (comprehension, judgment, intent) can now coexist in a single
+              capability. The reason AI feels novel is that no single entity has
+              ever held both sets of qualities at once. That's not a third column.
+              That's the blend, doing things neither parent could do alone.
+            </p>
+          </div>
+
+          {/* Subsection 3 — What leaders need to do */}
+          <div className="pov-sub-section" data-pov-animate>
+            <h3 className="pov-sub-title" data-pov-stagger>
+              What leaders need to do
+            </h3>
+            <p className="pov-prose" data-pov-stagger>
+              Treating AI as a blend changes everything downstream. If AI were a
+              separate tool, you'd buy it and bolt it on. Because AI is a blend,
+              you have to do the design work first, and then carefully decide where
+              AI belongs inside it. That sequence follows three deliberate steps.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              <strong>Design the future state.</strong> This is the foundational,
+              traditional work. What decisions get made, who owns them, and what
+              the workflow looks like when it's working. AI doesn't enter this
+              conversation yet, and trying to bring it in early is one of the most
+              common mistakes leaders make.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              <strong>Allocate the work.</strong> With the future state defined,
+              examine every meaningful activity and decide where it belongs: pure
+              human work, pure system work, or the new AI middle. This is where the
+              blend gets real. The allocations reshape roles, processes, and
+              accountability in ways that surprise most leadership teams.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              <strong>Deploy AI deliberately.</strong> Only now does AI adoption
+              become operational: governance frameworks, talent strategy, execution
+              rhythms, and the operating cadence that holds the redesign in place
+              over time.
+            </p>
+            <p className="pov-prose" data-pov-stagger>
+              What emerges from this sequence is scalable, accountable, AI-enabled
+              execution. It survives audit, scales without breaking, and produces
+              results the organization can actually point to.
+            </p>
+          </div>
+
+          {/* Three-step timeline — methodology summary */}
+          <svg
+            viewBox="0 0 680 270"
+            className="pov-timeline-svg"
+            data-pov-animate
+            role="img"
+            aria-labelledby="timeline-title timeline-desc"
+          >
+            <title id="timeline-title">The three-step sequence for adopting AI deliberately</title>
+            <desc id="timeline-desc">
+              A horizontal timeline with three numbered steps: 1. Design the future
+              state, 2. Allocate the work, 3. Deploy AI deliberately. The sequence
+              flows into a final outcome pill below: Scalable, accountable, AI-enabled
+              execution.
+            </desc>
+
+            <defs>
+              <marker
+                id="pov-timeline-arrow"
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="6"
+                markerHeight="6"
+                orient="auto-start-reverse"
+              >
+                <path
+                  d="M2 1L8 5L2 9"
+                  fill="none"
+                  stroke="context-stroke"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </marker>
+            </defs>
+
+            {/* Step 1 */}
+            <g className="step-group step-1">
+              <circle cx="180" cy="80" r="24"
+                      fill="#f5f0e8" stroke="#c8960a" strokeWidth="1.5" />
+              <text x="180" y="86" textAnchor="middle" className="pov-step-number">1</text>
+              <text x="180" y="135" textAnchor="middle" className="pov-step-label">
+                Design the future state
+              </text>
+            </g>
+
+            {/* Arrow 1 → 2 */}
+            <line className="timeline-line line-12"
+                  x1="210" y1="80" x2="310" y2="80"
+                  stroke="#c8960a" strokeWidth="1.5"
+                  markerEnd="url(#pov-timeline-arrow)" />
+
+            {/* Step 2 */}
+            <g className="step-group step-2">
+              <circle cx="340" cy="80" r="24"
+                      fill="#f5f0e8" stroke="#c8960a" strokeWidth="1.5" />
+              <text x="340" y="86" textAnchor="middle" className="pov-step-number">2</text>
+              <text x="340" y="135" textAnchor="middle" className="pov-step-label">
+                Allocate the work
+              </text>
+            </g>
+
+            {/* Arrow 2 → 3 */}
+            <line className="timeline-line line-23"
+                  x1="370" y1="80" x2="470" y2="80"
+                  stroke="#c8960a" strokeWidth="1.5"
+                  markerEnd="url(#pov-timeline-arrow)" />
+
+            {/* Step 3 */}
+            <g className="step-group step-3">
+              <circle cx="500" cy="80" r="24"
+                      fill="#f5f0e8" stroke="#c8960a" strokeWidth="1.5" />
+              <text x="500" y="86" textAnchor="middle" className="pov-step-number">3</text>
+              <text x="500" y="135" textAnchor="middle" className="pov-step-label">
+                Deploy AI deliberately
+              </text>
+            </g>
+
+            {/* Vertical drop to outcome */}
+            <line className="timeline-line line-down"
+                  x1="340" y1="160" x2="340" y2="195"
+                  stroke="#c8960a" strokeWidth="1.5"
+                  markerEnd="url(#pov-timeline-arrow)" />
+
+            {/* Outcome pill (gold fill, navy text — rhymes with AI = the blend) */}
+            <g className="outcome-group">
+              <rect x="80" y="200" width="520" height="50" rx="25"
+                    fill="#c8960a" stroke="#0d1b2a" strokeWidth="1" />
+              <text x="340" y="232" textAnchor="middle" className="pov-outcome-text">
+                Scalable, accountable, AI-enabled execution
+              </text>
+            </g>
+          </svg>
+
+          {/* Closing pull-quote */}
+          <blockquote className="pov-pullquote" data-pov-animate>
+            Because AI blends human and system capabilities, you can't just bolt
+            it on. You still have to do the foundational design work. There is
+            no shortcut to this.
+          </blockquote>
+        </div>
+      </section>
+
+      {/* ── Insights and Samples (merged: published essays + engagement work samples + white paper) ── */}
+      <section className="section section-mid" id="insights-and-samples">
+        <div className="max-w">
+          <div className="section-label">Insights and Samples</div>
+          <h2 className="section-title">Published essays<br />and engagement work.</h2>
+          <p className="section-sub">
+            Essays on the questions I keep seeing in large-scale transformation work
+            — alongside representative work products and original frameworks from
+            live engagements.
+          </p>
+
+          {/* ── Published essay ── */}
+          <div className="writing-card">
+            <div className="wr-date-block">
+              <div className="wr-date-label">Published</div>
+              <div className="wr-date">Mar 28</div>
+              <div className="wr-date-year">2026</div>
+              <div className="wr-kind">Point of View</div>
+            </div>
+
+            <div>
+              <h3 className="wr-title">
+                The System Is the Visible Investment. The Operating Model Is the Real Transformation.
+              </h3>
+              <p className="wr-body">
+                A brief perspective on what large state finance modernization programs —
+                Washington's One Washington and Maryland's 21st Century Financial Systems
+                initiative among them — reveal about the part of transformation that rarely
+                gets discussed: the operating-model decisions underneath the technology. The
+                system gets announced, funded, and measured. The operating burden is what
+                actually determines whether modernization produces durable improvement.
+              </p>
+              <div className="wr-tags">
+                {["Finance Transformation", "Operating Model", "Public Sector", "State Government"].map(t => (
+                  <span className="wr-tag" key={t}>{t}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="wr-action">
+              <div className="ev-action-top">
+                <div className="ev-action-label">Essay</div>
+                <div className="ev-action-meta">
+                  Brief PDF<br />
+                  ~5-minute read<br />
+                  Direct download
+                </div>
+              </div>
+              <a className="btn-dl" href={ASSETS.article_FinanceTransform} target="_blank" rel="noopener noreferrer">
+                Read Essay →
+              </a>
+            </div>
+          </div>
+
+          {/* ── White Paper: AI-Enabled Strategic Management ── */}
+          <div className="evidence-card" style={{ marginTop: 16 }}>
+            <div>
+              <div className="ev-meta-row">White Paper · AI Governance &amp; Strategic Management · May 2026</div>
+              <h3 className="ev-title">
+                AI-Enabled Strategic Management &amp; Execution Model
+              </h3>
+              <p className="ev-body" style={{ fontStyle: "italic", marginBottom: 12, color: "var(--warm)" }}>
+                Connecting Strategy, Execution, and Continuous Improvement Under Human Governance
+              </p>
+              <p className="ev-body">
+                An original framework positioning AI as the connective layer across strategic
+                planning, project execution, and process improvement — while preserving human
+                governance over prioritization, approval, risk acceptance, and final decisions.
+                The paper diagnoses the structural gap between three disciplines that produce
+                different artifacts on different cadences with different ownership, then proposes
+                a model in which AI ingests, interprets, drafts, connects, and monitors
+                so that traceability and alignment are maintained continuously rather than
+                reconstructed during quarterly reviews. Includes the management gap analysis,
+                the model itself, the value categories organizations can expect, and
+                principles for adoption sequenced from foundational to advanced.
+              </p>
+
+              <div className="ev-demonstrates-label">What it demonstrates</div>
+              <ul className="ev-demo-list">
+                <li>AI Governance Design</li>
+                <li>Strategic Management Architecture</li>
+                <li>Operating Model Frameworks</li>
+                <li>Cross-Discipline Integration</li>
+                <li>Original Thought Leadership</li>
+              </ul>
+            </div>
+
+            <div className="ev-action">
+              <div className="ev-action-top">
+                <div className="ev-action-label">White Paper</div>
+                <div className="ev-action-meta">
+                  7-page PDF<br />
+                  Original framework<br />
+                  Direct download
+                </div>
+              </div>
+              <a className="btn-dl" href={ASSETS.whitePaper_AIStrategicMgmt} target="_blank" rel="noopener noreferrer">
+                View White Paper →
+              </a>
+            </div>
+          </div>
+
+          {/* ── PMO Governance work sample ── */}
+          <div className="evidence-card" style={{ marginTop: 16 }}>
+            <div>
+              <div className="ev-meta-row">PMO Governance · Federal Science Agency · 2020–2024</div>
+              <h3 className="ev-title">
+                Enterprise Governance, Portfolio Prioritization, Dependency Management &amp; Executive Reporting
+              </h3>
+              <p className="ev-body">
+                Anonymized materials from a multi-year engagement at a federal science agency
+                supporting a congressionally mandated publication program and a broader portfolio
+                prioritization effort. Includes executive status reporting, risk register design,
+                stakeholder coordination structures, and a five-tier criteria framework for
+                sequencing competing releases across a shared production environment. The
+                publication program delivered on time for the first time in seven years.
+              </p>
+
+              <div className="ev-demonstrates-label">What it demonstrates</div>
+              <ul className="ev-demo-list">
+                <li>PMO Governance</li>
+                <li>Portfolio Sequencing</li>
+                <li>Executive Reporting</li>
+                <li>Risk Management</li>
+                <li>Stakeholder Coordination</li>
+              </ul>
+            </div>
+
+            <div className="ev-action">
+              <div className="ev-action-top">
+                <div className="ev-action-label">Work Sample</div>
+                <div className="ev-action-meta">
+                  11-page PDF<br />
+                  Anonymized<br />
+                  Direct download
+                </div>
+              </div>
+              <a className="btn-dl" href={ASSETS.workSample_NSF} target="_blank" rel="noopener noreferrer">
+                View Sample →
+              </a>
+            </div>
+          </div>
+
+          <div className="library-note">
+            <strong>Library growing.</strong> Additional essays, work samples, and original
+            frameworks — covering operating model design, governance, and AI-enabled
+            workflow — publishing throughout 2026.
+          </div>
+        </div>
+      </section>
+
+      {/* ── Tools ── */}
+      <section className="section section-dark" id="tools">
+        <div className="max-w">
+          <div className="section-label-dark">Tools</div>
+          <h2 className="section-title-light">Analytical tools I've built,<br />not just described.</h2>
+          <p className="section-sub-light">
+            Working applications developed to support real analytical work. Not concepts or
+            mockups — tools built on the same design logic I apply to operating model,
+            governance, data analysis and process work.
+          </p>
+
+          <div className="tool-feature">
+            <div>
+              <div className="tool-tag-row">
+                <div className="tool-tag">Interactive Application</div>
+                <div className="tool-status">Live</div>
+              </div>
+              <h3 className="tool-title">Cycle Time Analyzer</h3>
+              <p className="tool-body">
+                A transaction-level process diagnostic tool. Ingests raw CSV data in wide
+                format or event-log format and produces Six Sigma metrics, process capability
+                indices, dual analysis windows, data quality audits, and an AI-generated
+                narrative report.
+              </p>
+
+              <div className="tool-spec">
+                <div className="tool-spec-label">Problem</div>
+                <div className="tool-spec-value">
+                  Cycle-time variance and process drift are easy to claim, hard to demonstrate
+                  with transaction data.
+                </div>
+
+                <div className="tool-spec-label">Inputs</div>
+                <div className="tool-spec-value">
+                  Wide-format or event-log CSV; user-mapped columns; configurable analysis windows.
+                </div>
+
+                <div className="tool-spec-label">Outputs</div>
+                <div className="tool-spec-value">
+                  Cp/Cpk indices · coefficient of variation · value-add ratio · sigma levels ·
+                  data quality diagnostics · AI narrative report · PDF export.
+                </div>
+
+                <div className="tool-spec-label">Supports</div>
+                <div className="tool-spec-value">
+                  Process redesign decisions, executive capability reporting, and diagnostic
+                  conversations with operations leadership.
+                </div>
+              </div>
+
+              <a className="btn-launch" href={ASSETS.tool_CycleTimeAnalyzer} target="_blank" rel="noopener noreferrer">
+                Launch Application →
+              </a>
+            </div>
+            <ToolVisual />
+          </div>
+
+          <div className="tools-note">
+            <strong>Additional analytical tools in development.</strong> More applications
+            publishing as they reach working state.
+          </div>
+        </div>
+      </section>
+
 
       {/* ── Contact ── */}
       <section className="section section-dark" id="contact">
